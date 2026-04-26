@@ -76,8 +76,17 @@ img {
     height: auto;
 }
 
-.social-icon img:hover {
-    filter: none !important; /* Shows original colors on hover */
-    transform: scale(1.1);
-    transition: 0.3s;
+/* Specific styling for social logos to avoid global img borders */
+.social-logo {
+    width: 45px !important;
+    height: 45px !important;
+    border: none !important; /* Removes the thick light blue border */
+    margin: 0 !important;
+    filter: invert(88%) sepia(11%) saturate(934%) hue-rotate(167deg) brightness(97%) contrast(88%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-logo:hover {
+    transform: scale(1.2);
+    filter: none; /* Returns to original brand colors on hover */
 }
