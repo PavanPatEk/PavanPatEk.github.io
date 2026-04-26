@@ -1,18 +1,21 @@
+/* Import Spectral Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Spectral', serif; /* Updated Font */
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark Gray */
-    color: #add8e6; /* Light Blue - Dog friendly! */
+    background-color: #000000; /* Pitch Black */
+    color: #add8e6; /* Light Blue */
     line-height: 1.6;
 }
 
 #hero {
     background-color: #1a1a1a;
-    color: #87ceeb; /* Sky Blue */
+    color: #add8e6; /* Changed from Red to Light Blue */
     padding: 60px 20px;
     text-align: center;
-    border-bottom: 2px solid #87ceeb;
+    border-bottom: 5px solid #add8e6; /* Unified Light Blue */
 }
 
 h1 {
@@ -25,13 +28,14 @@ h1 {
     max-width: 800px;
     margin: 30px auto;
     padding: 30px;
-    background-color: #1e1e1e; /* Slightly lighter gray for depth */
-    border-left: 5px solid #87ceeb; /* Blue accent strip */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    background-color: #111; 
+    border-left: 15px solid #add8e6; /* Changed Red side-bar to Light Blue */
+    /* Blue highlight/glow removed here */
+    box-shadow: none; 
 }
 
 h2 {
-    color: #87ceeb;
+    color: #add8e6; /* Unified Light Blue */
     margin-top: 0;
 }
 
@@ -45,18 +49,18 @@ h2 {
 .btn-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #121212;
+    background-color: #000;
     color: #add8e6;
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #87ceeb;
+    border: 1px solid #add8e6;
     border-radius: 4px;
     transition: 0.3s;
 }
 
 .btn-link:hover {
-    background-color: #87ceeb;
-    color: #121212;
+    background-color: #add8e6;
+    color: #000;
 }
 
 .movie-list {
@@ -64,14 +68,10 @@ h2 {
     padding-left: 20px;
 }
 
-.movie-list li {
-    margin-bottom: 8px;
-}
-
 img {
     display: block;
     margin: 20px 0;
-    border: 2px solid #87ceeb;
+    border: 2px solid #add8e6; /* Unified Light Blue */
     max-width: 100%;
     height: auto;
 }
