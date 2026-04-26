@@ -1,62 +1,45 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Comic feel */
     margin: 0;
     padding: 0;
-    background-color: #f3e5ab; /* Vanilla */
-    color: #1a1a1a; /* Off-Black */
+    background-color: #000000; /* Pitch Black */
+    color: #00d4ff; /* Light Blue - Spidey Vision */
     line-height: 1.6;
 }
 
 #hero {
     background-color: #1a1a1a;
-    color: #fff8dd;
+    color: #ff0000; /* Spidey Red */
     padding: 60px 20px;
     text-align: center;
-    border-bottom: 5px solid #fff8dd;
-}
-
-h1 {
-    margin: 0;
-    font-size: 3rem;
-    letter-spacing: 2px;
+    border-bottom: 5px solid #00d4ff;
 }
 
 .content-box {
     max-width: 800px;
     margin: 30px auto;
     padding: 30px;
-    background-color: #fff; /* Stark white for contrast */
-    border-left: 10px solid #1a1a1a;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    background-color: #111; /* Dark Grey panels */
+    border-left: 15px solid #ff0000; /* The "Interactive" Red Stripe */
+    box-shadow: 0 0 20px #00d4ff;
+    position: relative;
+    cursor: pointer;
 }
 
-.link-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
+/* The Scroll Mechanic */
+.scroll-content {
+    display: none; /* Hidden by default */
+    padding-top: 20px;
+    border-top: 1px dashed #00d4ff;
+    margin-top: 10px;
 }
 
-.btn-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #1a1a1a;
-    color: #fff8dd;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: 0.3s;
+.content-box:active .scroll-content {
+    display: block; /* Shows when clicking the box */
 }
 
-.btn-link:hover {
-    background-color: #fff8dd;
-    color: #1a1a1a;
-}
-
-img {
-    display: block;
-    margin: 20px 0;
-    border: 3px solid #1a1a1a;
-    max-width: 100%;
-    height: auto;
+.fun-fact {
+    font-size: 0.8rem;
+    color: #fff;
+    font-style: italic;
 }
