@@ -2,20 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,700;1,400&display=swap');
 
 body {
-    font-family: 'Spectral', serif; /* Updated Font */
+    font-family: 'Spectral', serif;
     margin: 0;
     padding: 0;
     background-color: #000000; /* Pitch Black */
-    color: #add8e6; /* Light Blue */
+    color: #add8e6; /* Light Blue Text */
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 #hero {
-    background-color: #1a1a1a;
-    color: #add8e6; /* Changed from Red to Light Blue */
-    padding: 60px 20px;
+    background-color: #111111;
+    color: #add8e6;
+    padding: 50px 20px;
     text-align: center;
-    border-bottom: 5px solid #add8e6; /* Unified Light Blue */
+    border-bottom: 5px solid #add8e6;
 }
 
 h1 {
@@ -24,69 +25,370 @@ h1 {
     letter-spacing: 2px;
 }
 
-.content-box {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 30px;
-    background-color: #111; 
-    border-left: 15px solid #add8e6; /* Changed Red side-bar to Light Blue */
-    /* Blue highlight/glow removed here */
-    box-shadow: none; 
+h2 {
+    color: #add8e6;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
-h2 {
-    color: #add8e6; /* Unified Light Blue */
-    margin-top: 0;
+p {
+    margin: 0 0 15px 0;
+}
+
+/* ==========================================================================
+   FLEX GRID LAYOUT ENGINE (SIDE-BY-SIDE)
+   ========================================================================== */
+
+/* Expanded max-width to 1400px to spread wide across the screen and destroy empty space */
+.main-layout {
+    display: flex;
+    max-width: 1400px;
+    margin: 40px auto 10px auto;
+    gap: 35px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Equalized to 50% flex-basis so both split panels balance perfectly side-by-side */
+.content-box-split {
+    flex: 1 1 50%;
+    padding: 35px;
+    background-color: #111111;
+    border-left: 15px solid #add8e6;
+    box-sizing: border-box;
+}
+
+/* Extended full-width blocks to match the 1400px top-row boundaries */
+.content-box-full {
+    max-width: 1360px;
+    margin: 30px auto;
+    padding: 35px;
+    background-color: #111111;
+    border-left: 15px solid #add8e6;
+    box-sizing: border-box;
 }
 
 .link-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .btn-link {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #add8e6;
+    padding: 12px 24px;
+    background-color: #000000;
+    color: #add8e6 !important;
     text-decoration: none;
     font-weight: bold;
     border: 1px solid #add8e6;
     border-radius: 4px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .btn-link:hover {
     background-color: #add8e6;
-    color: #000;
+    color: #000000 !important;
 }
 
-.movie-list {
-    list-style-type: decimal;
-    padding-left: 20px;
+.disabled-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
-img {
-    display: block;
-    margin: 20px 0;
-    border: 2px solid #add8e6; /* Unified Light Blue */
-    max-width: 100%;
-    height: auto;
+.social-icons-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 15px;
 }
 
-/* Specific styling for social logos to avoid global img borders */
+/* Isolated logo controls to kill old image border rules */
 .social-logo {
-    width: 45px !important;
-    height: 45px !important;
-    border: none !important; /* Removes the thick light blue border */
+    width: 40px !important;
+    height: 40px !important;
+    border: none !important;
     margin: 0 !important;
+    display: block;
+    /* This filter turns the logos into your signature light blue by default */
     filter: invert(88%) sepia(11%) saturate(934%) hue-rotate(167deg) brightness(97%) contrast(88%);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for both size and color */
 }
 
+/* Restores the vibrant brand colors and scales the logo on hover */
 .social-logo:hover {
     transform: scale(1.2);
-    filter: none; /* Returns to original brand colors on hover */
+    filter: none !important; /* Completely removes the blue filter on hover */
+}
+
+.social-icon-link {
+    display: inline-block;
+    height: 40px;
+}
+
+.linkedin-icon {
+    width: 40px !important;
+    height: 40px !important;
+    border: none !important;
+    margin: 0 !important;
+    display: block;
+}
+
+/* ==========================================================================
+   NIMBUS PHOTO GALLERY GRID SYSTEM
+   ========================================================================== */
+
+.nimbus-gallery-grid {
+    display: grid;
+    /* Expanded minmax to 180px to stretch individual photo widths */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.gallery-thumb {
+    width: 100% !important;
+    /* Increased display height to 200px to fully consume empty vertical space */
+    height: 200px !important;
+    object-fit: cover !important;
+    border: 2px solid #add8e6 !important;
+    cursor: pointer;
+    margin: 0 !important;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.gallery-thumb:hover {
+    transform: scale(1.04);
+    filter: brightness(1.15);
+}
+
+/* ==========================================================================
+   FULLSCREEN LIGHTBOX MODAL OVERLAY STYLES
+   ========================================================================== */
+
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.lightbox.show-lightbox {
+    display: flex;
+}
+
+/* Centered content wrapper */
+.lightbox-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Standardized image rules for both Portrait and Landscape photos */
+.lightbox-content-wrapper img {
+    max-width: 80vw !important;  /* Caps image width to 80% of screen width */
+    max-height: 80vh !important; /* Caps image height to 80% of screen height */
+    width: auto !important;       /* Prevents vertical photos from stretching wide */
+    height: auto !important;      /* Prevents horizontal photos from stretching tall */
+    object-fit: contain !important; /* Ensures aspect ratio is preserved perfectly */
+    border: 4px solid #add8e6 !important; /* Your signature light blue border */
+    box-shadow: 0 0 30px rgba(173, 216, 230, 0.5); /* Glowing border highlight */
+    margin: 0 !important;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #add8e6;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.lightbox-close:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #add8e6;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 20px;
+    transition: transform 0.2s, color 0.2s;
+    z-index: 10000; /* Keeps arrows on top of scaled portrait images */
+}
+
+.lightbox-arrow:hover {
+    color: #ffffff;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.arrow-left {
+    left: 30px;
+}
+
+.arrow-right {
+    right: 30px;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 850px) {
+    .lightbox-content-wrapper img {
+        max-width: 90vw !important;  /* Takes up slightly more space on smaller mobile screens */
+        max-height: 70vh !important;
+    }
+    .lightbox-arrow {
+        font-size: 40px;
+    }
+    .arrow-left {
+        left: 10px;
+    }
+    .arrow-right {
+        right: 10px;
+    }
+    .lightbox-close {
+        top: 20px;
+        right: 25px;
+        font-size: 40px;
+    }
+}
+
+/* ==========================================================================
+   CENTERED MOVIE TIER GRID / SLIDER
+   ========================================================================== */
+
+.slider-title-wrapper {
+    max-width: 1160px;
+    margin: 40px auto 10px auto;
+    padding: 0 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.movie-slider-window {
+    width: 100%;
+    overflow-x: auto; 
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.movie-slider-window::-webkit-scrollbar {
+    height: 8px;
+}
+.movie-slider-window::-webkit-scrollbar-track {
+    background: #111;
+}
+.movie-slider-window::-webkit-scrollbar-thumb {
+    background: #add8e6;
+    border-radius: 4px;
+}
+
+.movie-slider-track {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card-container {
+    width: 180px;
+    height: 270px;
+    perspective: 1000px; 
+    cursor: pointer;
+    outline: none;
+}
+
+.movie-card-flipper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.movie-card-container.is-flipped .movie-card-flipper {
+    transform: rotateY(180deg);
+}
+
+.movie-card-front, .movie-card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.movie-card-front {
+    background-color: #111111;
+    border: 3px solid #add8e6;
+    color: #add8e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.movie-card-back {
+    background-color: #000;
+    transform: rotateY(180deg);
+    overflow: hidden;
+    border: 2px solid #add8e6;
+}
+
+.movie-card-back img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 850px) {
+    .main-layout {
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+    }
+    .lightbox-arrow {
+        font-size: 40px;
+    }
+    .arrow-left {
+        left: 10px;
+    }
+    .arrow-right {
+        right: 10px;
+    }
+    .lightbox-close {
+        top: 20px;
+        right: 25px;
+        font-size: 40px;
+    }
 }

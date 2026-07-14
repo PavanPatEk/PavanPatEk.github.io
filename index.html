@@ -14,56 +14,245 @@
         <p>ECE Student @ UT Austin | Powerlifter | Engineer</p>
     </div>
 
-    <div class="content-box">
-        <h2>Professional Background</h2>
-        <p>Hello World! I am Pavan, currently an Electrical and Computer Engineering student at UT Austin. My background includes technical project management and software integration. View my resume, a website I made for a local gym, and my LinkedIn below!</p>
+    <div class="main-layout">
         
-        <div class="link-section" style="display: flex; align-items: center; gap: 15px;">
-            <a href="Pavan Patel Resume.pdf" class="btn-link" target="_blank">View My Resume</a>
-            <a href="https://peninsulabarbell.com/" class="btn-link" target="_blank">Peninsula Barbell</a>
+        <div class="content-box-split">
+            <h2>Professional Background</h2>
+            <p>Hello World! I am Pavan, currently an Electrical and Computer Engineering student at UT Austin. My background includes technical project management and software integration. View my resume, a website I made for a local gym, and my LinkedIn below!</p>
             
-            <a href="https://www.linkedin.com/in/pavanpatel-/" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 40px; height: 40px; border: none; margin: 0; filter: invert(88%) sepia(11%) saturate(934%) hue-rotate(167deg) brightness(97%) contrast(88%);">
-            </a>
+            <div class="link-section">
+                <a href="Pavan Patel Resume.pdf" class="btn-link" target="_blank">View My Resume</a>
+                <a href="https://peninsulabarbell.com/" class="btn-link" target="_blank">Peninsula Barbell</a>
+                
+                <a href="https://www.linkedin.com/in/pavanpatel-/" target="_blank" class="social-icon-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="linkedin-icon">
+                </a>
+            </div>
+        </div>
+
+        <div class="content-box-split">
+            <h2>Nimbus Gallery</h2>
+            <p>Click any photo below to expand into a full-screen interactive slideshow! Use your keyboard arrow keys to navigate.</p>
+            
+            <div class="nimbus-gallery-grid">
+                <img src="nimbusphoto1.jpg" alt="Nimbus sitting on the sidewalk" class="gallery-thumb" onclick="openLightbox(0)" />
+                <img src="nimbusphoto2.jpg" alt="Nimbus smiling in the grass" class="gallery-thumb" onclick="openLightbox(1)" />
+                <img src="nimbusphoto3.jpg" alt="Nimbus Adventure Photo 1" class="gallery-thumb" onclick="openLightbox(2)" />
+                <img src="nimbusphoto4.jpg" alt="Nimbus Adventure Photo 2" class="gallery-thumb" onclick="openLightbox(3)" />
+                <img src="nimbusphoto5.png" alt="Nimbus Adventure Photo 3" class="gallery-thumb" onclick="openLightbox(4)" />
+            </div>
+            
+            <p style="margin-top: 20px; margin-bottom: 10px;">Follow Nimbus's adventures:</p>
+            <div class="social-icons-container">
+                <a href="https://www.instagram.com/nimbustailedcorgi/" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-logo">
+                </a>
+                <a href="https://www.youtube.com/@nimbustailedcorgi" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" class="social-logo">
+                </a>
+                <a href="https://www.tiktok.com/@nimbustailedcorgi" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-logo">
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="content-box-full">
+        <h2>🦝 Runaway Raccoon</h2>
+        <p>I am currently developing a custom-built game called <strong>Runaway Raccoon</strong>!</p>
+        <p>Once it launches, the installation file will be hosted right here so you can download and play it directly from your browser.</p>
+        <div class="link-section">
+            <a href="#" class="btn-link disabled-btn" onclick="alert('Game build coming soon!'); return false;">Download Build (Coming Soon)</a>
         </div>
     </div>
 
-    <div class="content-box">
-        <h2>Favorite Movies</h2>
-        <p>My Top 10 Database:</p>
-        <ol class="movie-list">
-            <li>Forrest Gump (1994)</li>
-            <li>Spider-Man 2 (2004)</li>
-            <li>Inception (2010)</li>
-            <li>Ready Player One (2018)</li>
-            <li>The Blind Side (2009)</li>
-            <li>Guardians of the Galaxy Vol. 3 (2023)</li>
-            <li>Logan (2017)</li>
-            <li>Joker (2019)</li>
-            <li>The Great Gatsby (2013)</li>
-            <li>The Karate Kid (2010)</li>
-        </ol>
+    <div class="slider-title-wrapper">
+        <h2>Favorite Movies Database</h2>
+        <p>Click any ranked card to toggle between the tier number and the official movie poster artwork!</p>
     </div>
 
-<div class="content-box">
-    <h2>Nimbus</h2>
-    <p>When I'm not in school or at the gym, I'm with my corgi. Nimbus is a major part of my life and digital branding. I hope the pictures of him make you happy!</p>
-    
-    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-        <img src="nimbus-outside-pic.png" alt="Nimbus the Corgi" style="width: 48%; height: auto; object-fit: cover;" />
-        <img src="nimbus-outside-pic2.jpg" alt="Nimbus in the grass" style="width: 48%; height: auto; object-fit: cover;" />
+    <div class="movie-slider-window">
+        <div class="movie-slider-track">
+            
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">1</div>
+                    <div class="movie-card-back">
+                        <img src="SPIDERMAN2_MOVIECOVER.jpg" alt="Spider-Man 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">2</div>
+                    <div class="movie-card-back">
+                        <img src="FORESTGUMP_MOVIECOVER.jpg" alt="Forrest Gump">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">3</div>
+                    <div class="movie-card-back">
+                        <img src="INCEPTION_MOVIECOVER.jpg" alt="Inception">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">4</div>
+                    <div class="movie-card-back">
+                        <img src="READYPLAYERONE_MOVIECOVER.jpg" alt="Ready Player One">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">5</div>
+                    <div class="movie-card-back">
+                        <img src="BLINDSIDE_MOVIECOVER.jpg" alt="The Blind Side">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">6</div>
+                    <div class="movie-card-back">
+                        <img src="GOTG3_MOVIECOVER.jpg" alt="Guardians of the Galaxy 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">7</div>
+                    <div class="movie-card-back">
+                        <img src="LOGAN_MOVIECOVER.jpg" alt="Logan">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">8</div>
+                    <div class="movie-card-back">
+                        <img src="JOKER_MOVIECOVER.jpg" alt="Joker">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">9</div>
+                    <div class="movie-card-back">
+                        <img src="THEGREATGATSBY_MOVIECOVER.jpg" alt="The Great Gatsby">
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card-container" onclick="toggleCardFlip(this)">
+                <div class="movie-card-flipper">
+                    <div class="movie-card-front">10</div>
+                    <div class="movie-card-back">
+                        <img src="KIRATEKID_MOVIECOVER.jpg" alt="The Karate Kid">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     
-    <p>Follow Nimbus's adventures:</p>
-    <div class="link-section" style="display: flex; justify-content: center; gap: 40px; margin-top: 20px;">
-        <a href="https://www.instagram.com/nimbustailedcorgi/" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" class="social-logo">
-        </a>
-        <a href="https://www.youtube.com/@nimbustailedcorgi" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174883.png" alt="YouTube" class="social-logo">
-        </a>
-        <a href="https://www.tiktok.com/@nimbustailedcorgi" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" class="social-logo">
-        </a>
+    <div style="height: 60px;"></div>
+
+    <div id="lightboxModal" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        
+        <span class="lightbox-arrow arrow-left" onclick="changeImage(-1)">&#10094;</span>
+        <span class="lightbox-arrow arrow-right" onclick="changeImage(1)">&#10095;</span>
+        
+        <div class="lightbox-content-wrapper">
+            <img id="lightboxImage" src="" alt="Expanded View" />
+        </div>
     </div>
-</div>
+
+    <script>
+        // Toggle persistent flip state for movie cards
+        function toggleCardFlip(cardElement) {
+            cardElement.classList.toggle('is-flipped');
+        }
+
+        // ==========================================================================
+        // LIGHTBOX ENGINE FOR NIMBUS GALLERY
+        // ==========================================================================
+        
+        // Define our exact image list array order matching your folders
+        const nimbusImages = [
+            "nimbusphoto1.jpg",
+            "nimbusphoto2.jpg",
+            "nimbusphoto3.jpg",
+            "nimbusphoto4.jpg",
+            "nimbusphoto5.png"
+        ];
+        
+        let currentImgIndex = 0;
+        const modalElement = document.getElementById("lightboxModal");
+        const lightboxImgElement = document.getElementById("lightboxImage");
+
+        // Open Lightbox
+        function openLightbox(index) {
+            currentImgIndex = index;
+            lightboxImgElement.src = nimbusImages[currentImgIndex];
+            modalElement.classList.add("show-lightbox");
+            document.body.style.overflow = "hidden"; // Prevent background body scroll when lightbox is open
+        }
+
+        // Close Lightbox
+        function closeLightbox() {
+            modalElement.classList.remove("show-lightbox");
+            document.body.style.overflow = "auto"; // Re-enable background scrolling
+        }
+
+        // Cycle next/prev image
+        function changeImage(direction) {
+            currentImgIndex += direction;
+            
+            // Handle wrapping loops
+            if (currentImgIndex >= nimbusImages.length) {
+                currentImgIndex = 0; // Wrap back to first photo
+            } else if (currentImgIndex < 0) {
+                currentImgIndex = nimbusImages.length - 1; // Wrap to last photo
+            }
+            
+            // Update image source path smoothly
+            lightboxImgElement.src = nimbusImages[currentImgIndex];
+        }
+
+        // KEYBOARD EVENT LISTENERS FOR ARROW KEYS AND ESCAPE
+        document.addEventListener("keydown", function(event) {
+            // Only capture inputs if modal overlay is currently open
+            if (modalElement.classList.contains("show-lightbox")) {
+                if (event.key === "ArrowLeft") {
+                    changeImage(-1);
+                } else if (event.key === "ArrowRight") {
+                    changeImage(1);
+                } else if (event.key === "Escape") {
+                    closeLightbox();
+                }
+            }
+        });
+
+        // Close modal if user clicks on the dark background space outside the actual image
+        modalElement.addEventListener("click", function(event) {
+            if (event.target === modalElement) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
